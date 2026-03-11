@@ -1,79 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sabor de Cuba</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    :root { --gold: #C5A059; --dark: #222; --bg: #fff; }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); }
-
-    header { padding: 3rem 1rem; text-align: center; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 500; letter-spacing: 1px; }
-    .line { width: 30px; height: 1px; background: var(--gold); margin: 1rem auto; }
-
-    /* Contenedor de fotos más pequeñas y elegantes */
-    .gallery { 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      gap: 3rem; 
-      padding: 1rem; 
-    }
-    
-    .card { width: 100%; max-width: 320px; text-align: center; }
-    
-    /* Aquí ajustamos el tamaño de la imagen */
-    .card img { 
-      width: 100%; 
-      height: 320px; /* Tamaño cuadrado y más contenido */
-      object-fit: cover; 
-      border-radius: 2px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0,05);
-    }
-    
-    .card-info { margin-top: 1rem; }
-    .card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-    .card-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 0.3rem; }
-
-    .btn-wa {
-      display: inline-block; margin: 4rem 0; padding: 1rem 2rem; 
-      border: 1px solid var(--dark); color: var(--dark);
-      text-decoration: none; font-size: 0.8rem; letter-spacing: 2px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Sabor de Cuba</title>
 </head>
-<body>
+<body style="background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 20px;">
 
-  <header>
-    <h1>Sabor de Cuba</h1>
-    <div class="line"></div>
-  </header>
+    <h1 style="color: #d4af37; font-size: 3em;">Sabor de Cuba</h1>
+    <p style="font-style: italic; color: #d4af37; font-size: 1.2em;">Bizcochos, dulces y tablas de queso</p>
 
-  <section class="gallery">
-    <div class="card">
-      <img src="107100.jpg">
-      <div class="card-info">
-        <p class="card-tag">Exclusividad</p>
-        <h3 class="card-title">Repostería Fina</h3>
-      </div>
+    <hr style="width: 50px; border: 1px solid #d4af37; margin: 30px auto;">
+
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
+        <div style="margin-bottom: 20px;">
+            <img src="tarta rosa.png" width="280" style="border-radius: 15px; border: 2px solid #333;">
+            <p style="color: #d4af37; font-weight: bold; margin-top: 10px;">Repostería Fina</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <img src="tarta azul.png" width="280" style="border-radius: 15px; border: 2px solid #333;">
+            <p style="color: #d4af37; font-weight: bold; margin-top: 10px;">Diseños Especiales</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <img src="tabla.png" width="280" style="border-radius: 15px; border: 2px solid #333;">
+            <p style="color: #d4af37; font-weight: bold; margin-top: 10px;">Tablas Gourmet</p>
+        </div>
     </div>
 
-    <div class="card">
-      <img src="107101.jpg">
-      <div class="card-info">
-        <p class="card-tag">Gourmet</p>
-        <h3 class="card-title">Tablas y Catering</h3>
-      </div>
-    </div>
-  </section>
-
-  <center>
-    <a href="https://wa.me/TU_NUMERO" class="btn-wa">CONTACTAR POR WHATSAPP</a>
-  </center>
+    <footer style="margin-top: 50px; border-top: 1px solid #333; padding-top: 20px; color: #888;">
+        <p>Hecho con amor por Sabor de Cuba</p>
+    </footer>
 
 </body>
 </html>
-
