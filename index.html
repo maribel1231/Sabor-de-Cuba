@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabor de Cuba \u2013 Yamilka \u00b7 Belgi\u00eb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;800&family=Abril+Fatface&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rojo:    #D62828;
+      --naranja: #F4A261;
+      --amarillo:#FFD166;
+      --verde:   #2DC653;
+      --azul:    #023E8A;
+      --morado:  #7B2FBE;
+      --crema:   #FFF8F0;
+      --oscuro:  #1A0A00;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Nunito',sans-serif; background:var(--crema); color:var(--oscuro); overflow-x:hidden; }
+
+    /* \u2500\u2500 HERO \u2500\u2500 */
+    .hero {
+      min-height:100vh;
+      background: linear-gradient(160deg,#D62828 0%,#7B2FBE 55%,#023E8A 100%);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:3rem 2rem 7rem; position:relative; overflow:hidden;
+    }
+    .dot { position:absolute; border-radius:50%; opacity:.15; animation:float 7s ease-in-out infinite; }
+    .d1{width:350px;height:350px;background:var(--amarillo);top:-100px;left:-100px;animation-delay:0s;}
+    .d2{width:220px;height:220px;background:var(--verde);bottom:80px;right:-60px;animation-delay:2s;}
+    .d3{width:140px;height:140px;background:var(--naranja);top:35%;left:4%;animation-delay:3.5s;}
+    .d4{width:100px;height:100px;background:#fff;top:18%;right:6%;animation-delay:1.5s;}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+
+    /* LOGO */
+    .logo-svg { width:210px;height:210px; filter:drop-shadow(0 14px 36px rgba(0,0,0,.4));
+      animation:popIn .9s cubic-bezier(.34,1.56,.64,1) both; margin-bottom:1.2rem; }
+    @keyframes popIn{from{opacity:0;transform:scale(.4) rotate(-15deg);}to{opacity:1;transform:scale(1) rotate(0);}}
+
+    .hero h1 {
+      font-family:'Abril Fatface',serif;
+      font-size:clamp(2.8rem,9vw,6.5rem);
+      color:var(--amarillo);
+      text-shadow:4px 4px 0 rgba(0,0,0,.28);
+      line-height:1; animation:fadeUp .8s .3s ease both;
+    }
+    .hero-by {
+      font-size:clamp(.95rem,2.5vw,1.2rem);
+      color:rgba(255,255,255,.8); font-weight:600;
+      margin-top:.5rem; letter-spacing:.1em;
+      animation:fadeUp .8s .45s ease both;
+    }
+    .hero-nl {
+      font-size:clamp(.8rem,2vw,1rem); color:rgba(255,255,255,.55);
+      font-style:italic; margin-top:.25rem;
+      animation:fadeUp .8s .55s ease both;
+    }
+    .divider-star {
+      margin:1.2rem auto; color:var(--amarillo); font-size:1.4rem;
+      letter-spacing:.6rem; animation:fadeUp .8s .6s ease both;
+    }
+
+    .btn-wa {
+      display:inline-flex; align-items:center; gap:.55rem;
+      background:#25D366; color:#fff; font-family:'Nunito',sans-serif;
+      font-size:1.15rem; font-weight:800; padding:.95rem 2.2rem;
+      border-radius:50px; text-decoration:none;
+      box-shadow:0 6px 0 #128C3E,0 14px 32px rgba(0,0,0,.3);
+      transition:transform .2s,box-shadow .2s;
+      animation:fadeUp .8s .7s ease both;
+    }
+    .btn-wa:hover{transform:translateY(-4px);box-shadow:0 10px 0 #128C3E,0 20px 40px rgba(0,0,0,.35);}
+    .btn-wa:active{transform:translateY(2px);box-shadow:0 3px 0 #128C3E;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+    .wave{position:absolute;bottom:-2px;left:0;width:100%;}
+
+    /* \u2500\u2500 PRODUCTOS \u2500\u2500 */
+    .productos{ padding:5rem 2rem; text-align:center; }
+    .badge{
+      display:inline-block; background:var(--rojo); color:#fff;
+      font-size:.72rem; font-weight:800; letter-spacing:.22em;
+      text-transform:uppercase; padding:.35rem 1.1rem; border-radius:50px; margin-bottom:1rem;
+    }
+    .sec-title{ font-family:'Abril Fatface',serif; font-size:clamp(2rem,5vw,3rem); color:var(--morado); margin-bottom:.3rem; }
+    .sec-nl{ font-size:.95rem; color:#aaa; font-style:italic; margin-bottom:3rem; }
+
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; max-width:1100px; margin:0 auto; }
+
+    .card{
+      border-radius:22px; padding:2.5rem 1.8rem 2rem; text-align:center;
+      transition:transform .3s,box-shadow .3s; cursor:default;
+      box-shadow:0 6px 24px rgba(0,0,0,.09);
+    }
+    .card:hover{transform:translateY(-10px) rotate(.8deg); box-shadow:0 16px 40px rgba(0,0,0,.14);}
+    .card.c1{background:linear-gradient(145deg,#FFD166,#F4A261);}
+    .card.c2{background:linear-gradient(145deg,#D62828,#7B2FBE); color:#fff;}
+    .card.c3{background:linear-gradient(145deg,#2DC653,#023E8A); color:#fff;}
+
+    .card-icon{font-size:3.8rem; margin-bottom:1rem;}
+    .card-name{font-family:'Pacifico',cursive; font-size:1.5rem; margin-bottom:.3rem;}
+    .card-nl{font-size:.82rem; opacity:.65; font-style:italic; margin-bottom:.8rem;}
+    .card-desc{font-size:.95rem; line-height:1.75; opacity:.88;}
+
+    /* \u2500\u2500 BANNER CUBA \u2500\u2500 */
+    .banner{
+      background:var(--oscuro); padding:4.5rem 2rem; text-align:center; position:relative; overflow:hidden;
+    }
+    .banner::before{
+      content:''; position:absolute; inset:0;
+      background:repeating-linear-gradient(90deg,transparent 0,transparent 59px,rgba(255,209,102,.06) 59px,rgba(255,209,102,.06) 60px);
+    }
+    .banner-title{ font-family:'Abril Fatface',serif; font-size:clamp(1.8rem,4vw,2.8rem); color:var(--amarillo); margin-bottom:.4rem; }
+    .banner-nl{ font-size:.95rem; color:rgba(255,255,255,.45); font-style:italic; margin-bottom:1.8rem; }
+    .banner-txt{ max-width:680px; margin:0 auto; color:rgba(255,255,255,.78); font-size:1.05rem; line-height:1.9; }
+    .flags{ margin-top:2rem; font-size:3.2rem; letter-spacing:.6rem; }
+
+    /* \u2500\u2500 CONTACTO \u2500\u2500 */
+    .contacto{ padding:5rem 2rem; text-align:center; background:var(--crema); }
+    .contact-box{
+      display:inline-block;
+      background:linear-gradient(135deg,var(--rojo),var(--morado));
+      border-radius:26px; padding:3rem 3.5rem; color:#fff;
+      box-shadow:8px 8px 0 var(--amarillo),14px 14px 0 var(--naranja);
+      margin-top:2rem;
+    }
+    .contact-nombre{ font-family:'Abril Fatface',serif; font-size:2.4rem; color:var(--amarillo); margin-bottom:.2rem; }
+    .contact-biz{ font-family:'Pacifico',cursive; font-size:1.1rem; color:rgba(255,255,255,.7); margin-bottom:1.5rem; }
+    .btn-wa2{
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:#25D366; color:#fff; font-weight:800; font-size:1.1rem;
+      padding:.9rem 2rem; border-radius:50px; text-decoration:none;
+      box-shadow:0 5px 0 #128C3E; transition:transform .2s;
+    }
+    .btn-wa2:hover{transform:translateY(-3px);}
+    .contact-tel{ margin-top:1rem; font-size:.88rem; opacity:.55; letter-spacing:.1em; }
+
+    /* \u2500\u2500 FOOTER \u2500\u2500 */
+    footer{ background:var(--oscuro); color:rgba(255,255,255,.3); text-align:center; padding:1.5rem; font-size:.8rem; }
+    footer span{color:var(--amarillo);}
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="dot d1"></div><div class="dot d2"></div>
+  <div class="dot d3"></div><div class="dot d4"></div>
+
+  <!-- LOGO SVG: pastel + estrella + palma + nombre -->
+  <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="gbg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%"   stop-color="#FFD166"/>
+        <stop offset="100%" stop-color="#F4A261"/>
+      </radialGradient>
+    </defs>
+    <!-- Fondo circular -->
+    <circle cx="100" cy="100" r="96" fill="url(#gbg)"/>
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#D62828" stroke-width="6"/>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="#7B2FBE" stroke-width="2" stroke-dasharray="6 4"/>
+
+    <!-- Pastel: base -->
+    <rect x="48" y="128" width="104" height="28" rx="9" fill="#D62828"/>
+    <!-- Pastel: capa media -->
+    <rect x="54" y="106" width="92"  height="26" rx="8" fill="#F4A261"/>
+    <!-- Pastel: capa superior -->
+    <rect x="62" y="87"  width="76"  height="22" rx="8" fill="#FFD166"/>
+    <!-- Bet\u00fan blanco -->
+    <path d="M48,128 Q75,117 100,128 Q125,139 152,128" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M54,106 Q78,96 100,106 Q122,116 146,106" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Vela -->
+    <rect x="97" y="70" width="6" height="19" rx="3" fill="#7B2FBE"/>
+    <!-- Llama -->
+    <ellipse cx="100" cy="66" rx="5" ry="8"  fill="#FFD166"/>
+    <ellipse cx="100" cy="65" rx="3" ry="5"  fill="#F4A261"/>
+
+    <!-- Estrella cubana -->
+    <polygon
